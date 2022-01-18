@@ -702,7 +702,8 @@ func readDBFHeader(r io.ReadSeeker) (*DBFHeader, error) {
 func validFileVersion(version byte) error {
 	switch version {
 	default:
-		return fmt.Errorf("untested DBF file version: %d (%x hex), try overriding ValidFileVersionFunc to open this file anyway", version, version)
+		//return fmt.Errorf("untested DBF file version: %d (%x hex), try overriding ValidFileVersionFunc to open this file anyway", version, version)
+		return nil
 	case 0x30, 0x31:
 		return nil
 	}
